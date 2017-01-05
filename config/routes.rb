@@ -21,5 +21,10 @@ Rails.application.routes.draw do
       get '/movies', to: :index, controller: 'my_api'
       get '/movies/:id', to: :show, controller: 'my_api'
     end
+
+    namespace :v2 do
+      get '/movies', to: :index, controller: 'my_api'
+      get '/movies/:id', to: :show, controller: 'my_api'
+    end
   end
 end
