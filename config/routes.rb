@@ -15,4 +15,11 @@ Rails.application.routes.draw do
       get :export
     end
   end
+
+  namespace :api do
+    namespace :v1 do
+      get '/movies', to: :index, controller: 'my_api'
+      get '/movies/:id', to: :show, controller: 'my_api'
+    end
+  end
 end
