@@ -3,3 +3,15 @@
   = movie.description
 - if user_signed_in?
   %p= link_to 'Email me details about this movie', send_info_movie_path(movie), class: 'btn btn-sm btn-default'
+%p
+  %img.img-rounded{ src: movie.decorate.movie_poster }
+%p
+  %b
+    = 'Plot Overview'
+%p
+  = movie.decorate.plot_overview
+%p
+  %b
+    = 'Vote Average'
+%p
+  = movie.decorate.vote_average
