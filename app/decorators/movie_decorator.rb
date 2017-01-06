@@ -14,8 +14,9 @@ class MovieDecorator < Draper::Decorator
   end
 
   def movie_poster
-    base_url = MovieDbApiClient.instance.configuration.base_url
-    size = MovieDbApiClient.instance.configuration.poster_sizes.second
+    movie_poster_path = movie_info.poster_path
+    base_url = MovieDbApiClient.configuration.base_url
+    size = MovieDbApiClient.configuration.poster_sizes.second
 
     base_url + size + movie_poster_path
   end
@@ -24,9 +25,5 @@ class MovieDecorator < Draper::Decorator
 
   def movie_info
     MovieDbApiClient.instance.movie_details(title)
-  end
-
-  def movie_poster_path
-    movie_info.poster_path
   end
 end

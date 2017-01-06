@@ -4,11 +4,13 @@ require 'singleton'
 class MovieDbApiClient
   include Singleton
 
-  attr_reader :configuration
-
   def initialize
     Tmdb::Api.key(ENV['MOVEDB_API_KEY'])
-    @configuration = Tmdb::Configuration.new
+    @@configuration = Tmdb::Configuration.new
+  end
+
+  def self.configuration
+    @@configuration
   end
 
   def movie_details(title)
