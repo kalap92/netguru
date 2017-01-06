@@ -14,6 +14,7 @@ gem 'bootstrap-sass'
 gem 'annotate', '~> 2.6.5'
 gem 'themoviedb'
 gem 'active_model_serializers'
+gem 'sucker_punch', '~> 2.0'
 
 group :development do
   gem 'rails-erd'
