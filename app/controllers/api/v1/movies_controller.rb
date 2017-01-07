@@ -1,4 +1,4 @@
-class Api::V1::MyApiController < ApplicationController
+class Api::V1::MoviesController < ApplicationController
   def index
     movies = Movie.all
     render json: movies, each_serializer: MovieSerializerV1

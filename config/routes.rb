@@ -18,13 +18,11 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      get '/movies', to: :index, controller: 'my_api'
-      get '/movies/:id', to: :show, controller: 'my_api'
+      resources :movies, only: [:index, :show]
     end
 
     namespace :v2 do
-      get '/movies', to: :index, controller: 'my_api'
-      get '/movies/:id', to: :show, controller: 'my_api'
+      resources :movies, only: [:index, :show]
     end
   end
 end
