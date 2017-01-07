@@ -1,4 +1,4 @@
-class MovieSerializerV2 < ActiveModel::Serializer
+class Api::V2::MovieSerializer < ActiveModel::Serializer
   attributes :id, :title, :genre_id, :genre_name, :genre_movies_count
 
   def genre_name
